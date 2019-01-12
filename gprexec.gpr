@@ -2,6 +2,10 @@ with "gpr.gpr";
 project gprexec is
    for Main use ("gprexec-main.adb");
 
+   package Compiler is
+      for Switches ("ada") use ("-gnatg");
+   end Compiler;
+
    package Builder is
       for Executable ("gprexec-main.adb") use "gprexec";
    end Builder;
